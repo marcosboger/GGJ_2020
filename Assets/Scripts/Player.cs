@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] float thrust = 5f;
     [SerializeField] float climbSpeed = 5f;
     [SerializeField] float jumpForce = 5f;
+    [SerializeField] float direction = 1f;
 
     //Cached references
     Animator myAnimator;
@@ -36,14 +38,12 @@ public class Player : MonoBehaviour
         Run();
         FlipSprite();
         Climb();
-        Jump();
     }
 
     private void Run()
     {
         // TO DO: sostituire con il nuovo input system
-        var directionX = Input.GetAxis("Horizontal");
-        var movement = new Vector2(directionX * thrust, myRigidbody.velocity.y);
+        var movement = new Vector2(direction * thrust, myRigidbody.velocity.y);
         //myRigidbody.AddForce(newPos); // molto più lento che non modificare direttamente la velocity
         myRigidbody.velocity = movement;
         myAnimator.SetBool(ANIMATOR_ISRUNNING_KEY, PlayerHasHorizontalSpeed());
@@ -78,17 +78,23 @@ public class Player : MonoBehaviour
     }
 
 
-    private void Jump()
+    private IEnumerator JumpCoroutine()
     {
-        //Debug.Log(IsInLadderSpace());
-        if (!(IsOnGround() || IsInLadderSpace())) { return; }
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            Debug.Log("Jump!");
-            myRigidbody.velocity += new Vector2(myRigidbody.velocity.x, jumpForce);
-        }
+        yield return new WaitForSeconds(.1f);
+        myRigidbody.velocity += new Vector2(myRigidbody.velocity.x, jumpForce);
     }
+
+    //private void Jump()
+    //{
+    //    //Debug.Log(IsInLadderSpace());
+    //    if (!(IsOnGround() || IsInLadderSpace())) { return; }
+
+    //    if (Input.GetButtonDown("Jump"))
+    //    {
+    //        Debug.Log("Jump!");
+    //        myRigidbody.velocity += new Vector2(myRigidbody.velocity.x, jumpForce);
+    //    }
+    //}
 
     private void FlipSprite()
     {
@@ -96,6 +102,16 @@ public class Player : MonoBehaviour
         {
             mySpriteRenderer.flipX = myRigidbody.velocity.x < 0;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (IsInJumpSpace())
+        {
+            Debug.Log("Should trigger the jump");
+            StartCoroutine(JumpCoroutine());
+        }
+            
     }
 
     private bool IsOnGround()
@@ -108,4 +124,8 @@ public class Player : MonoBehaviour
         return myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ladders"));
     }
 
+    private bool IsInJumpSpace()
+    {
+        return myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Jumpable"));
+    }
 }
