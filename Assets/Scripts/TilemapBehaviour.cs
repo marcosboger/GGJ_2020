@@ -11,6 +11,7 @@ public class TilemapBehaviour : MonoBehaviour
     private Vector3Int firstClickPos, secondClickPos;
     private bool _first = false;
     private bool _stop = true;
+    private Color _voidColor = new Color(0.494749f, 0.9622642f, 0.5050168f, 0.4117647f);
     [SerializeField ] private GameObject _player;
     private Vector2 _initialPosition;
     private GameObject[] enemies;
@@ -46,7 +47,7 @@ public class TilemapBehaviour : MonoBehaviour
                 if ((interactable.GetTile<Tile>(pos).name == "Void"))
                 {
                     interactable.SetTileFlags(pos, TileFlags.None);
-                    interactable.SetColor(pos, Color.white);
+                    interactable.SetColor(pos, _voidColor);
                 }
             }
         }
