@@ -4786,40 +4786,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Exit
       objectReference: {fileID: 0}
-    - target: {fileID: 4862392556271987147, guid: 700bdac7720467a49959a95aa8234086,
-        type: 3}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 4862392556271987147, guid: 700bdac7720467a49959a95aa8234086,
-        type: 3}
-      propertyPath: m_TagString
-      value: Exit
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 700bdac7720467a49959a95aa8234086, type: 3}
---- !u!1 &1693869767 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4862392556271987147, guid: 700bdac7720467a49959a95aa8234086,
-    type: 3}
-  m_PrefabInstance: {fileID: 1693869766}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &1693869768
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1693869767}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.1
 --- !u!1 &1717769748
 GameObject:
   m_ObjectHideFlags: 0
