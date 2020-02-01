@@ -16,8 +16,8 @@ public class TilemapBehaviour : MonoBehaviour
 
     private void Start()
     {
-        interactable.color = Color.red;
-        interactableNonTrigger.color = Color.red;
+        interactable.color = Color.cyan;
+        interactableNonTrigger.color = Color.cyan;
         firstTileTrigger = true;
         secondTileTrigger = true;
         _player = GameObject.Find("Player_80");
@@ -29,6 +29,9 @@ public class TilemapBehaviour : MonoBehaviour
         _stop = true;
         _first = false;
         _player.transform.position = new Vector2(_initialPosition.x, _initialPosition.y);
+        interactable.color = Color.cyan;
+        interactableNonTrigger.color = Color.cyan;
+        _player.GetComponent<Player>().direction = 1f;
     }
 
     public void deactivateChanges()

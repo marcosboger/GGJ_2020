@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] float thrust = 5f;
     [SerializeField] float climbSpeed = 5f;
     [SerializeField] float jumpForce = 100f;
-    [SerializeField] float direction = 1f;
+    [SerializeField] public float direction = 1f;
     [SerializeField] Tilemap interactables, foregroundTriggers;
 
     //Cached references
