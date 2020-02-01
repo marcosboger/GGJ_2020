@@ -16,8 +16,8 @@ public class TilemapBehaviour : MonoBehaviour
     {
         interactable.color = Color.red;
         interactableNonTrigger.color = Color.red;
-        firstTileTrigger = false;
-        secondTileTrigger = false;
+        firstTileTrigger = true;
+        secondTileTrigger = true;
     }
 
     public void activateChanges()
@@ -29,6 +29,12 @@ public class TilemapBehaviour : MonoBehaviour
     public void deactivateChanges()
     {
         _stop = false;
+        interactable.GetComponent<TilemapCollider2D>().enabled = false;
+        interactable.GetComponent<TilemapCollider2D>().enabled = true;
+        interactableNonTrigger.GetComponent<TilemapCollider2D>().enabled = false;
+        interactableNonTrigger.GetComponent<TilemapCollider2D>().enabled = true;
+        interactable.color = Color.white;
+        interactableNonTrigger.color = Color.white;
     }
 
     private void Update()
@@ -44,6 +50,7 @@ public class TilemapBehaviour : MonoBehaviour
                 firstTileTrigger = true;
                 if(firstClickTile == null)
                 {
+                    firstClickPos = interactableNonTrigger.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition));
                     firstClickTile = interactableNonTrigger.GetTile<Tile>(firstClickPos);
                     firstTileTrigger = false;
                 }
@@ -65,35 +72,51 @@ public class TilemapBehaviour : MonoBehaviour
             }
             else if(_stop)
             {
-                Debug.Log("Second Click!");
                 _first = false;
                 secondClickPos = interactable.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition));
                 secondClickTile = interactable.GetTile<Tile>(secondClickPos);
+                secondTileTrigger = true;
                 if (secondClickTile == null)
                 {
+                    secondClickPos = interactableNonTrigger.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition));
                     secondClickTile = interactableNonTrigger.GetTile<Tile>(secondClickPos);
                     secondTileTrigger = false;
                 }
                 if (secondClickTile == null)
                 {
                     interactable.SetColor(firstClickPos, Color.white);
+                    interactableNonTrigger.SetColor(firstClickPos, Color.white);
                     _first = false;
                     return;
                 }
-                if (secondTileTrigger)
-                {
-                    interactable.SetTileFlags(firstClickPos, TileFlags.None);
-                    interactable.SetColor(firstClickPos, Color.green);
-                }
-                if (secondTileTrigger)
+                if (firstTileTrigger && secondTileTrigger)
                 {
                     interactable.SetTile(secondClickPos, firstClickTile);
                     interactable.SetTile(firstClickPos, secondClickTile);
-                    interactable.SetColor(firstClickPos, Color.white);
-                    interactable.SetColor(secondClickPos, Color.white);
-                    interactableNonTrigger.SetColor(firstClickPos, Color.white);
-                    interactableNonTrigger.SetColor(secondClickPos, Color.white);
                 }
+                if (firstTileTrigger && !secondTileTrigger)
+                {
+                    interactableNonTrigger.SetTile(secondClickPos, null);
+                    interactable.SetTile(firstClickPos, null);
+                    interactable.SetTile(secondClickPos, firstClickTile);
+                    interactableNonTrigger.SetTile(firstClickPos, secondClickTile);
+                }
+                if (!firstTileTrigger && secondTileTrigger)
+                {
+                    interactableNonTrigger.SetTile(firstClickPos, null);
+                    interactable.SetTile(secondClickPos, null);
+                    interactable.SetTile(firstClickPos, secondClickTile);
+                    interactableNonTrigger.SetTile(secondClickPos, firstClickTile);
+                }
+                if (!firstTileTrigger && !secondTileTrigger)
+                {
+                    interactableNonTrigger.SetTile(secondClickPos, firstClickTile);
+                    interactableNonTrigger.SetTile(firstClickPos, secondClickTile);
+                }
+                interactable.SetColor(firstClickPos, Color.white);
+                interactable.SetColor(secondClickPos, Color.white);
+                interactableNonTrigger.SetColor(firstClickPos, Color.white);
+                interactableNonTrigger.SetColor(secondClickPos, Color.white);
             }
         }
     }

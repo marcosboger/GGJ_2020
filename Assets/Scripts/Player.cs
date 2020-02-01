@@ -83,7 +83,18 @@ public class Player : MonoBehaviour
     private IEnumerator JumpCoroutine()
     {
         yield return new WaitForSeconds(.1f);
-        myRigidbody.velocity += new Vector2(myRigidbody.velocity.x, jumpForce);
+        if (myRigidbody.velocity.y < 0)
+            myRigidbody.velocity += new Vector2(myRigidbody.velocity.x, 4*jumpForce);
+        else
+            myRigidbody.velocity += new Vector2(myRigidbody.velocity.x, jumpForce);
+    }
+
+    private void Jump()
+    {
+        if (myRigidbody.velocity.y < 0)
+            myRigidbody.velocity += new Vector2(myRigidbody.velocity.x, 2.5f * jumpForce);
+        else
+            myRigidbody.velocity += new Vector2(myRigidbody.velocity.x, jumpForce);
     }
 
     //private void Jump()
@@ -111,7 +122,8 @@ public class Player : MonoBehaviour
         if (IsInInteractableSpace() == "SPA-Ladder")
         {
             Debug.Log("Should trigger the jump");
-            StartCoroutine(JumpCoroutine());
+            //StartCoroutine(JumpCoroutine());
+            Jump();
         }
 
         if (IsInInteractableSpace() == "SPA_Rock_Grass_Water_29")
