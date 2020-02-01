@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
@@ -11,8 +12,9 @@ public class LevelController : MonoBehaviour
     }
 
 
-    void ResetLevel()
+    public void ResetLevel()
     {
         //FindObjectOfType<Player>().ResetPosition();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
