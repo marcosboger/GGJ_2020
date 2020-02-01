@@ -95,13 +95,13 @@ public class Player : MonoBehaviour
     {
         if (collision.tag != "Exit")
         {
-            if (IsInInteractableSpace(collision.ClosestPoint(gameObject.transform.position)) == "JUMP")
+            if (IsInInteractableSpace(collision.ClosestPoint(gameObject.transform.position)) == "Jump")
             {
                 //StartCoroutine(JumpCoroutine());
                 Jump();
             }
 
-            if (IsInInteractableSpace(collision.ClosestPoint(gameObject.transform.position)) == "SPA_Rock_Grass_Water_29")
+            if (IsInInteractableSpace(collision.ClosestPoint(gameObject.transform.position)) == "Turn Around")
             {
                 direction = -1 * direction;
             }
@@ -136,6 +136,7 @@ public class Player : MonoBehaviour
 
     private string IsInInteractableSpace(Vector2 closestPoint)
     {
+        Debug.Log(foregroundTriggers.GetTile<Tile>(foregroundTriggers.WorldToCell(closestPoint)).name);
         if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Interactable")))
             return interactables.GetTile<Tile>(interactables.WorldToCell(closestPoint)).name;
         else if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Terrain")))
