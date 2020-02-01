@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     //BoxCollider2D myFeetCollider;
     Rigidbody2D myRigidbody;
     SpriteRenderer mySpriteRenderer;
+    GameObject TileManager;
+    GameObject TimeManager;
 
     float startingGravityScale;
 
@@ -32,7 +34,8 @@ public class Player : MonoBehaviour
         //myFeetCollider = GetComponent<BoxCollider2D>();
         mySpriteRenderer = GetComponentInChildren<SpriteRenderer>();
         startingGravityScale = myRigidbody.gravityScale;
-        
+        TileManager = GameObject.Find("Tile Manager");
+        TimeManager = GameObject.Find("Time Manager");
     }
 
     // Update is called once per frame
@@ -104,6 +107,15 @@ public class Player : MonoBehaviour
             }
         }
      }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Death")
+        {
+            TimeManager.GetComponent<TimeManager>().StopTime();
+            TileManager.GetComponent<TilemapBehaviour>().activateChanges();
+        }
+    }
 
     private bool IsOnGround()
     {

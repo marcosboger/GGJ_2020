@@ -13,7 +13,7 @@ public class TilemapBehaviour : MonoBehaviour
     private bool _stop = true;
     [SerializeField ] private GameObject _player;
     private Vector2 _initialPosition;
-
+    private GameObject[] enemies;
     private void Start()
     {
         interactable.color = Color.cyan;
@@ -32,6 +32,12 @@ public class TilemapBehaviour : MonoBehaviour
         interactable.color = Color.cyan;
         interactableNonTrigger.color = Color.cyan;
         _player.GetComponent<Player>().direction = 1f;
+        enemies = GameObject.FindGameObjectsWithTag("Death");
+        foreach(GameObject e in enemies)
+        {
+            if (e.GetComponent<enemy>() != null)
+                e.GetComponent<enemy>().Reset();
+        }
     }
 
     public void deactivateChanges()
@@ -47,11 +53,6 @@ public class TilemapBehaviour : MonoBehaviour
 
     private void Update()
     {
-        if (_player.transform.position.y < -12 && !_stop)
-        {
-            //Time.timeScale = 0f;
-            activateChanges();
-        }
         if (Input.GetMouseButtonDown(0))
         {
             if (!_first && _stop)
