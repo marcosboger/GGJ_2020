@@ -16,8 +16,8 @@ public class TilemapBehaviour : MonoBehaviour
     private GameObject[] enemies;
     private void Start()
     {
-        interactable.color = Color.cyan;
-        interactableNonTrigger.color = Color.cyan;
+        //interactable.color = Color.cyan;
+        //interactableNonTrigger.color = Color.cyan;
         firstTileTrigger = true;
         secondTileTrigger = true;
         //_player = GameObject.Find("Player_80"); // Use the Serializable field, otherwise we can't use the old player prefab anymore
@@ -29,8 +29,8 @@ public class TilemapBehaviour : MonoBehaviour
         _stop = true;
         _first = false;
         _player.transform.position = new Vector2(_initialPosition.x, _initialPosition.y);
-        interactable.color = Color.cyan;
-        interactableNonTrigger.color = Color.cyan;
+        //interactable.color = Color.cyan;
+        //interactableNonTrigger.color = Color.cyan;
         _player.GetComponent<Player>().direction = 1f;
         enemies = GameObject.FindGameObjectsWithTag("Death");
         foreach(GameObject e in enemies)
@@ -47,8 +47,8 @@ public class TilemapBehaviour : MonoBehaviour
         interactable.GetComponent<TilemapCollider2D>().enabled = true;
         interactableNonTrigger.GetComponent<TilemapCollider2D>().enabled = false;
         interactableNonTrigger.GetComponent<TilemapCollider2D>().enabled = true;
-        interactable.color = Color.white;
-        interactableNonTrigger.color = Color.white;
+        //interactable.color = Color.white;
+        //interactableNonTrigger.color = Color.white;
     }
 
     private void Update()
@@ -75,12 +75,12 @@ public class TilemapBehaviour : MonoBehaviour
                 if (firstTileTrigger)
                 {
                     interactable.SetTileFlags(firstClickPos, TileFlags.None);
-                    interactable.SetColor(firstClickPos, Color.green);
+                    //interactable.SetColor(firstClickPos, Color.green);
                 }
                 else
                 {
                     interactableNonTrigger.SetTileFlags(firstClickPos, TileFlags.None);
-                    interactableNonTrigger.SetColor(firstClickPos, Color.green);
+                    //interactableNonTrigger.SetColor(firstClickPos, Color.green);
                 }
             }
             else if(_stop)
@@ -97,8 +97,8 @@ public class TilemapBehaviour : MonoBehaviour
                 }
                 if (secondClickTile == null)
                 {
-                    interactable.SetColor(firstClickPos, Color.white);
-                    interactableNonTrigger.SetColor(firstClickPos, Color.white);
+                    //interactable.SetColor(firstClickPos, Color.white);
+                    //interactableNonTrigger.SetColor(firstClickPos, Color.white);
                     _first = false;
                     return;
                 }
@@ -126,10 +126,10 @@ public class TilemapBehaviour : MonoBehaviour
                     interactableNonTrigger.SetTile(secondClickPos, firstClickTile);
                     interactableNonTrigger.SetTile(firstClickPos, secondClickTile);
                 }
-                interactable.SetColor(firstClickPos, Color.white);
-                interactable.SetColor(secondClickPos, Color.white);
-                interactableNonTrigger.SetColor(firstClickPos, Color.white);
-                interactableNonTrigger.SetColor(secondClickPos, Color.white);
+                //interactable.SetColor(firstClickPos, Color.white);
+                //interactable.SetColor(secondClickPos, Color.white);
+                //interactableNonTrigger.SetColor(firstClickPos, Color.white);
+                //interactableNonTrigger.SetColor(secondClickPos, Color.white);
             }
         }
     }
