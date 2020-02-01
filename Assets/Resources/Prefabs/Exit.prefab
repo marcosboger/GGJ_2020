@@ -96,6 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelLoadDelay: 2
   LevelExitSlowMoFactor: 0.2
+  exitClip: {fileID: 8300000, guid: dbcf50b46c008e548a64de3b6add1652, type: 3}
 --- !u!70 &4862392557086823924
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -109,6 +110,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0708313}
-  m_Size: {x: 0.95921516, y: 1.3744459}
+  m_Offset: {x: 0.007941604, y: 0.0021953583}
+  m_Size: {x: 0.1809299, y: 0.1809299}
   m_Direction: 0
