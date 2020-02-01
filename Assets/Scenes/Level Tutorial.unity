@@ -3021,6 +3021,7 @@ MonoBehaviour:
   interactable: {fileID: 1928108833}
   interactableNonTrigger: {fileID: 517693295}
   _player: {fileID: 1785191276}
+  _sound: {fileID: 8300000, guid: 500e9ee3d68a1754ba74cc645b085c78, type: 3}
 --- !u!1001 &1693869766
 PrefabInstance:
   m_ObjectHideFlags: 0

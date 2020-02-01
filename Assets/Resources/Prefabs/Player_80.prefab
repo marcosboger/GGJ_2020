@@ -133,8 +133,8 @@ MonoBehaviour:
   direction: 1
   interactables: {fileID: 0}
   foregroundTriggers: {fileID: 0}
-  deathClip:
-  - {fileID: 8300000, guid: 6002e03a240791b4eae30cda0bfeccd8, type: 3}
+  deathClip: {fileID: 8300000, guid: 6002e03a240791b4eae30cda0bfeccd8, type: 3}
+  jumpClip: {fileID: 8300000, guid: b13898dbe2508a0418e926b4a6a25077, type: 3}
 --- !u!70 &5953064102921597838
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

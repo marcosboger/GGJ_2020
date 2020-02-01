@@ -13,6 +13,7 @@ public class TilemapBehaviour : MonoBehaviour
     private bool _stop = true;
     private Color _voidColor = new Color(0.494749f, 0.9622642f, 0.5050168f, 0.4117647f);
     [SerializeField ] private GameObject _player;
+    [SerializeField] private AudioClip _sound;
     private Vector2 _initialPosition;
     private GameObject[] enemies;
     private void Start()
@@ -127,6 +128,7 @@ public class TilemapBehaviour : MonoBehaviour
                     _first = false;
                     return;
                 }
+                AudioSource.PlayClipAtPoint(_sound, Camera.main.transform.position);
                 if (firstTileTrigger && secondTileTrigger)
                 {
                     interactable.SetTile(secondClickPos, firstClickTile);
