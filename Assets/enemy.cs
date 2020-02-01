@@ -55,7 +55,6 @@ public class enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("colidi");
         direction = direction * -1f;
     }
 }
