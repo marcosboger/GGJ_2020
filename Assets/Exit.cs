@@ -11,7 +11,8 @@ public class Exit : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        StartCoroutine(LoadNextLevel());
+        if(other.transform.gameObject.name == "Player_80")
+            StartCoroutine(LoadNextLevel());
     }
 
     IEnumerator LoadNextLevel()

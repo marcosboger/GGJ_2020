@@ -28,6 +28,14 @@ public class enemy : MonoBehaviour
     {
         Run();
         FlipSprite();
+        RaycastHit hit;
+        // Does the ray intersect any objects excluding the player layer
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 100f))
+        {
+            Debug.Log("Did Hit");
+            direction = direction * -1f;
+        }
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
     }
     public void Reset()
     {
@@ -55,6 +63,9 @@ public class enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.transform.gameObject.name == "Exit")
+            return;
         direction = direction * -1f;
     }
+
 }
