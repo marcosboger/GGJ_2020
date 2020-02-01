@@ -1,18 +1,20 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Player : MonoBehaviour
 {
 
     [SerializeField] float thrust = 5f;
     [SerializeField] float climbSpeed = 5f;
-    [SerializeField] float jumpForce = 5f;
+    [SerializeField] float jumpForce = 100f;
     [SerializeField] float direction = 1f;
+    [SerializeField] Tilemap interactables, foregroundTriggers;
 
     //Cached references
     Animator myAnimator;
     CapsuleCollider2D myBodyCollider;
-    BoxCollider2D myFeetCollider;
+    //BoxCollider2D myFeetCollider;
     Rigidbody2D myRigidbody;
     SpriteRenderer mySpriteRenderer;
 
@@ -27,7 +29,7 @@ public class Player : MonoBehaviour
         myAnimator = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
         myBodyCollider = GetComponent<CapsuleCollider2D>();
-        myFeetCollider = GetComponent<BoxCollider2D>();
+        //myFeetCollider = GetComponent<BoxCollider2D>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         startingGravityScale = myRigidbody.gravityScale;
     }
@@ -106,26 +108,52 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (IsInJumpSpace())
+        if (IsInInteractableSpace() == "SPA-Ladder")
         {
             Debug.Log("Should trigger the jump");
             StartCoroutine(JumpCoroutine());
         }
-            
+
+        if (IsInInteractableSpace() == "SPA_Rock_Grass_Water_29")
+        {
+            Debug.Log("Should make player go back");
+            direction = -1 * direction;
+        }
+
     }
 
     private bool IsOnGround()
     {
-        return myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Terrain"));
+        //return myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Terrain"));
+        return false;
     }
 
     private bool IsInLadderSpace()
     {
-        return myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ladders"));
+        //return myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ladders"));
+        return false;
     }
 
     private bool IsInJumpSpace()
     {
         return myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Jumpable"));
+    }
+
+    private string IsInInteractableSpace()
+    {
+        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Interactable")))
+        {
+            Debug.Log(transform.position);
+            Debug.Log(interactables.WorldToCell(transform.position));
+            return interactables.GetTile<Tile>(interactables.WorldToCell(transform.position)).name;
+        }
+        else if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Terrain")))
+        {
+            Debug.Log(transform.position);
+            Debug.Log(interactables.WorldToCell(transform.position));
+            return foregroundTriggers.GetTile<Tile>(foregroundTriggers.WorldToCell(transform.position)).name;
+        }
+        else
+            return null;
     }
 }

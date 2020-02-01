@@ -119,7 +119,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 5
   climbSpeed: 5
-  jumpForce: 20
+  jumpForce: 10
+  direction: 1
+  interactables: {fileID: 0}
 --- !u!70 &4698942213733661475
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
