@@ -30,8 +30,9 @@ public class Player : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
         myBodyCollider = GetComponent<CapsuleCollider2D>();
         //myFeetCollider = GetComponent<BoxCollider2D>();
-        mySpriteRenderer = GetComponent<SpriteRenderer>();
+        mySpriteRenderer = GetComponentInChildren<SpriteRenderer>();
         startingGravityScale = myRigidbody.gravityScale;
+        
     }
 
     // Update is called once per frame
@@ -91,7 +92,7 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-        if (myRigidbody.velocity.y < 0)
+        if (myRigidbody.velocity.y < -0.1f)
             myRigidbody.velocity += new Vector2(myRigidbody.velocity.x, 2.15f * jumpForce);
         else
             myRigidbody.velocity += new Vector2(myRigidbody.velocity.x, jumpForce);
@@ -119,13 +120,13 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (IsInInteractableSpace() == "SPA-Ladder")
+        if (IsInInteractableSpace(collision.ClosestPoint(gameObject.transform.position)) == "SPA-Ladder")
         {
             //StartCoroutine(JumpCoroutine());
             Jump();
         }
 
-        if (IsInInteractableSpace() == "SPA_Rock_Grass_Water_29")
+        if (IsInInteractableSpace(collision.ClosestPoint(gameObject.transform.position)) == "SPA_Rock_Grass_Water_29")
         {
             direction = -1 * direction;
         }
@@ -149,12 +150,12 @@ public class Player : MonoBehaviour
         return myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Jumpable"));
     }
 
-    private string IsInInteractableSpace()
+    private string IsInInteractableSpace(Vector2 closestPoint)
     {
         if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Interactable")))
-            return interactables.GetTile<Tile>(interactables.WorldToCell(transform.position)).name;
+            return interactables.GetTile<Tile>(interactables.WorldToCell(closestPoint)).name;
         else if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Terrain")))
-            return foregroundTriggers.GetTile<Tile>(foregroundTriggers.WorldToCell(transform.position)).name;
+            return foregroundTriggers.GetTile<Tile>(foregroundTriggers.WorldToCell(closestPoint)).name;
         else
             return null;
     }

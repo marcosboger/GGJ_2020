@@ -11,6 +11,8 @@ public class TilemapBehaviour : MonoBehaviour
     private Vector3Int firstClickPos, secondClickPos;
     private bool _first = false;
     private bool _stop = true;
+    private GameObject _player;
+    private Vector2 _initialPosition;
 
     private void Start()
     {
@@ -18,12 +20,15 @@ public class TilemapBehaviour : MonoBehaviour
         interactableNonTrigger.color = Color.red;
         firstTileTrigger = true;
         secondTileTrigger = true;
+        _player = GameObject.Find("Player_80");
+        _initialPosition = new Vector2(_player.transform.position.x, _player.transform.position.y);
     }
 
     public void activateChanges()
     {
         _stop = true;
         _first = false;
+        _player.transform.position = new Vector2(_initialPosition.x, _initialPosition.y);
     }
 
     public void deactivateChanges()
@@ -39,7 +44,12 @@ public class TilemapBehaviour : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (_player.transform.position.y < -12 && !_stop)
+        {
+            Time.timeScale = 0f;
+            activateChanges();
+        }
+        if (Input.GetMouseButtonDown(0))
         {
             if (!_first && _stop)
             {
