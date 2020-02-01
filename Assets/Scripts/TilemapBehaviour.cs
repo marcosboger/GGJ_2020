@@ -16,8 +16,8 @@ public class TilemapBehaviour : MonoBehaviour
     private GameObject[] enemies;
     private void Start()
     {
-        //interactable.color = Color.cyan;
-        //interactableNonTrigger.color = Color.cyan;
+        interactable.color = Color.yellow;
+        interactableNonTrigger.color = Color.yellow;
         firstTileTrigger = true;
         secondTileTrigger = true;
         //_player = GameObject.Find("Player_80"); // Use the Serializable field, otherwise we can't use the old player prefab anymore
@@ -29,14 +29,26 @@ public class TilemapBehaviour : MonoBehaviour
         _stop = true;
         _first = false;
         _player.transform.position = new Vector2(_initialPosition.x, _initialPosition.y);
-        //interactable.color = Color.cyan;
-        //interactableNonTrigger.color = Color.cyan;
+        interactable.color = Color.yellow;
+        interactableNonTrigger.color = Color.yellow;
         _player.GetComponent<Player>().direction = 1f;
         enemies = GameObject.FindGameObjectsWithTag("Death");
         foreach(GameObject e in enemies)
         {
             if (e.GetComponent<Enemy>() != null)
                 e.GetComponent<Enemy>().Reset();
+        }
+        foreach (var pos in interactable.cellBounds.allPositionsWithin)
+        {
+
+            if (interactable.GetTile<Tile>(pos) != null)
+            {
+                if ((interactable.GetTile<Tile>(pos).name == "Void"))
+                {
+                    interactable.SetTileFlags(pos, TileFlags.None);
+                    interactable.SetColor(pos, Color.white);
+                }
+            }
         }
     }
 
@@ -47,8 +59,20 @@ public class TilemapBehaviour : MonoBehaviour
         interactable.GetComponent<TilemapCollider2D>().enabled = true;
         interactableNonTrigger.GetComponent<TilemapCollider2D>().enabled = false;
         interactableNonTrigger.GetComponent<TilemapCollider2D>().enabled = true;
-        //interactable.color = Color.white;
-        //interactableNonTrigger.color = Color.white;
+        interactable.color = Color.white;
+        interactableNonTrigger.color = Color.white;
+        foreach (var pos in interactable.cellBounds.allPositionsWithin)
+        {
+  
+            if(interactable.GetTile<Tile>(pos) != null)
+            {
+                if((interactable.GetTile<Tile>(pos).name == "Void"))
+                {
+                    interactable.SetTileFlags(pos, TileFlags.None);
+                    interactable.SetColor(pos, Color.clear);
+                }
+            }
+        }
     }
 
     private void Update()
