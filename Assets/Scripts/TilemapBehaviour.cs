@@ -35,8 +35,8 @@ public class TilemapBehaviour : MonoBehaviour
         enemies = GameObject.FindGameObjectsWithTag("Death");
         foreach(GameObject e in enemies)
         {
-            if (e.GetComponent<enemy>() != null)
-                e.GetComponent<enemy>().Reset();
+            if (e.GetComponent<Enemy>() != null)
+                e.GetComponent<Enemy>().Reset();
         }
     }
 
