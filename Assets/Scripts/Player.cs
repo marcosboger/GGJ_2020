@@ -136,7 +136,6 @@ public class Player : MonoBehaviour
 
     private string IsInInteractableSpace(Vector2 closestPoint)
     {
-        Debug.Log(foregroundTriggers.GetTile<Tile>(foregroundTriggers.WorldToCell(closestPoint)).name);
         if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Interactable")))
             return interactables.GetTile<Tile>(interactables.WorldToCell(closestPoint)).name;
         else if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Terrain")))
