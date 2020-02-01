@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
         mySpriteRenderer = GetComponentInChildren<SpriteRenderer>();
         startingGravityScale = myRigidbody.gravityScale;
         TileManager = GameObject.Find("Tile Manager");
-        TimeManager = GameObject.Find("Time Manager");
+        TimeManager = GameObject.Find("Game Canvas");
     }
 
     // Update is called once per frame
