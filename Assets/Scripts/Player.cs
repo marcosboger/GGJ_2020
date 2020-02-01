@@ -95,7 +95,7 @@ public class Player : MonoBehaviour
     {
         if (collision.tag != "Exit")
         {
-            if (IsInInteractableSpace(collision.ClosestPoint(gameObject.transform.position)) == "SPA-Ladder")
+            if (IsInInteractableSpace(collision.ClosestPoint(gameObject.transform.position)) == "JUMP")
             {
                 //StartCoroutine(JumpCoroutine());
                 Jump();
