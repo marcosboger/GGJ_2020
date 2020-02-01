@@ -11,7 +11,7 @@ public class TilemapBehaviour : MonoBehaviour
     private Vector3Int firstClickPos, secondClickPos;
     private bool _first = false;
     private bool _stop = true;
-    private GameObject _player;
+    [SerializeField ] private GameObject _player;
     private Vector2 _initialPosition;
 
     private void Start()
@@ -20,7 +20,7 @@ public class TilemapBehaviour : MonoBehaviour
         interactableNonTrigger.color = Color.cyan;
         firstTileTrigger = true;
         secondTileTrigger = true;
-        _player = GameObject.Find("Player_80");
+        //_player = GameObject.Find("Player_80"); // Use the Serializable field, otherwise we can't use the old player prefab anymore
         _initialPosition = new Vector2(_player.transform.position.x, _player.transform.position.y);
     }
 
@@ -49,7 +49,7 @@ public class TilemapBehaviour : MonoBehaviour
     {
         if (_player.transform.position.y < -12 && !_stop)
         {
-            Time.timeScale = 0f;
+            //Time.timeScale = 0f;
             activateChanges();
         }
         if (Input.GetMouseButtonDown(0))

@@ -40,33 +40,14 @@ public class Player : MonoBehaviour
     {
         Run();
         FlipSprite();
-        Climb();
     }
 
     private void Run()
     {
         // TO DO: sostituire con il nuovo input system
         var movement = new Vector2(direction * thrust, myRigidbody.velocity.y);
-        //myRigidbody.AddForce(newPos); // molto più lento che non modificare direttamente la velocity
         myRigidbody.velocity = movement;
-        //myAnimator.SetBool(ANIMATOR_ISRUNNING_KEY, PlayerHasHorizontalSpeed());
-    }
-
-    private void Climb()
-    {
-        if (!IsInLadderSpace())
-        {
-            //myAnimator.SetBool(ANIMATOR_ISCLIMBING_KEY, false);
-            myRigidbody.gravityScale = startingGravityScale;
-            return;
-        }
-
-        var deltaY = Input.GetAxis("Vertical") * climbSpeed;
-        myRigidbody.gravityScale = 0f;
-        var verticalMovement = new Vector2(myRigidbody.velocity.x, deltaY);
-        //myRigidbody.AddForce(newPos); // molto più lento che non modificare direttamente la velocity
-        myRigidbody.velocity = verticalMovement;
-        //myAnimator.SetBool(ANIMATOR_ISCLIMBING_KEY, PlayerHasVerticalSpeed());
+        myAnimator.SetBool(ANIMATOR_ISRUNNING_KEY, PlayerHasHorizontalSpeed());
     }
 
 
@@ -98,17 +79,6 @@ public class Player : MonoBehaviour
             myRigidbody.velocity += new Vector2(myRigidbody.velocity.x, jumpForce);
     }
 
-    //private void Jump()
-    //{
-    //    //Debug.Log(IsInLadderSpace());
-    //    if (!(IsOnGround() || IsInLadderSpace())) { return; }
-
-    //    if (Input.GetButtonDown("Jump"))
-    //    {
-    //        Debug.Log("Jump!");
-    //        myRigidbody.velocity += new Vector2(myRigidbody.velocity.x, jumpForce);
-    //    }
-    //}
 
     private void FlipSprite()
     {
@@ -120,18 +90,20 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (IsInInteractableSpace(collision.ClosestPoint(gameObject.transform.position)) == "SPA-Ladder")
+        if (collision.tag != "Exit")
         {
-            //StartCoroutine(JumpCoroutine());
-            Jump();
-        }
+            if (IsInInteractableSpace(collision.ClosestPoint(gameObject.transform.position)) == "SPA-Ladder")
+            {
+                //StartCoroutine(JumpCoroutine());
+                Jump();
+            }
 
-        if (IsInInteractableSpace(collision.ClosestPoint(gameObject.transform.position)) == "SPA_Rock_Grass_Water_29")
-        {
-            direction = -1 * direction;
+            if (IsInInteractableSpace(collision.ClosestPoint(gameObject.transform.position)) == "SPA_Rock_Grass_Water_29")
+            {
+                direction = -1 * direction;
+            }
         }
-
-    }
+     }
 
     private bool IsOnGround()
     {
