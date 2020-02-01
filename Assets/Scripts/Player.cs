@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     [SerializeField] float jumpForce = 100f;
     [SerializeField] public float direction = 1f;
     [SerializeField] Tilemap interactables, foregroundTriggers;
+    [SerializeField] AudioClip deathClip;
+    [SerializeField] AudioClip jumpClip;
 
     //Cached references
     Animator myAnimator;
@@ -76,6 +78,7 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
+
         if (myRigidbody.velocity.y < -0.1f)
             myRigidbody.velocity += new Vector2(myRigidbody.velocity.x, 2.15f * jumpForce);
         else
@@ -98,6 +101,7 @@ public class Player : MonoBehaviour
             if (IsInInteractableSpace(collision.ClosestPoint(gameObject.transform.position)) == "Jump")
             {
                 //StartCoroutine(JumpCoroutine());
+                AudioSource.PlayClipAtPoint(jumpClip, Camera.main.transform.position);
                 Jump();
             }
 
@@ -113,6 +117,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Death")
         {
             TimeManager.GetComponent<TimeManager>().StopTime();
+            AudioSource.PlayClipAtPoint(deathClip, Camera.main.transform.position);
             TileManager.GetComponent<TilemapBehaviour>().activateChanges();
         }
     }
