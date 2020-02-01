@@ -43,7 +43,6 @@ public class TilemapBehaviour : MonoBehaviour
         {
             if (!_first && _stop)
             {
-                Debug.Log("First Click!");
                 _first = true;
                 firstClickPos = interactable.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition));
                 firstClickTile = interactable.GetTile<Tile>(firstClickPos);

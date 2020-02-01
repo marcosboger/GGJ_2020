@@ -48,14 +48,14 @@ public class Player : MonoBehaviour
         var movement = new Vector2(direction * thrust, myRigidbody.velocity.y);
         //myRigidbody.AddForce(newPos); // molto più lento che non modificare direttamente la velocity
         myRigidbody.velocity = movement;
-        myAnimator.SetBool(ANIMATOR_ISRUNNING_KEY, PlayerHasHorizontalSpeed());
+        //myAnimator.SetBool(ANIMATOR_ISRUNNING_KEY, PlayerHasHorizontalSpeed());
     }
 
     private void Climb()
     {
         if (!IsInLadderSpace())
         {
-            myAnimator.SetBool(ANIMATOR_ISCLIMBING_KEY, false);
+            //myAnimator.SetBool(ANIMATOR_ISCLIMBING_KEY, false);
             myRigidbody.gravityScale = startingGravityScale;
             return;
         }
@@ -65,7 +65,7 @@ public class Player : MonoBehaviour
         var verticalMovement = new Vector2(myRigidbody.velocity.x, deltaY);
         //myRigidbody.AddForce(newPos); // molto più lento che non modificare direttamente la velocity
         myRigidbody.velocity = verticalMovement;
-        myAnimator.SetBool(ANIMATOR_ISCLIMBING_KEY, PlayerHasVerticalSpeed());
+        //myAnimator.SetBool(ANIMATOR_ISCLIMBING_KEY, PlayerHasVerticalSpeed());
     }
 
 
@@ -92,7 +92,7 @@ public class Player : MonoBehaviour
     private void Jump()
     {
         if (myRigidbody.velocity.y < 0)
-            myRigidbody.velocity += new Vector2(myRigidbody.velocity.x, 2.5f * jumpForce);
+            myRigidbody.velocity += new Vector2(myRigidbody.velocity.x, 2.15f * jumpForce);
         else
             myRigidbody.velocity += new Vector2(myRigidbody.velocity.x, jumpForce);
     }
@@ -121,14 +121,12 @@ public class Player : MonoBehaviour
     {
         if (IsInInteractableSpace() == "SPA-Ladder")
         {
-            Debug.Log("Should trigger the jump");
             //StartCoroutine(JumpCoroutine());
             Jump();
         }
 
         if (IsInInteractableSpace() == "SPA_Rock_Grass_Water_29")
         {
-            Debug.Log("Should make player go back");
             direction = -1 * direction;
         }
 
@@ -154,17 +152,9 @@ public class Player : MonoBehaviour
     private string IsInInteractableSpace()
     {
         if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Interactable")))
-        {
-            Debug.Log(transform.position);
-            Debug.Log(interactables.WorldToCell(transform.position));
             return interactables.GetTile<Tile>(interactables.WorldToCell(transform.position)).name;
-        }
         else if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Terrain")))
-        {
-            Debug.Log(transform.position);
-            Debug.Log(interactables.WorldToCell(transform.position));
             return foregroundTriggers.GetTile<Tile>(foregroundTriggers.WorldToCell(transform.position)).name;
-        }
         else
             return null;
     }
