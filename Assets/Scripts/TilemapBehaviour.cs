@@ -12,6 +12,7 @@ public class TilemapBehaviour : MonoBehaviour
     private Vector3Int firstClickPos, secondClickPos;
     private bool _first = false;
     private bool _stop = true;
+    private AudioSource musicPlayer;
     private Color _voidColor = new Color(0.494749f, 0.9622642f, 0.5050168f, 0.4117647f);
     [SerializeField ] private GameObject _player;
     [SerializeField] private AudioClip _sound;
@@ -25,6 +26,7 @@ public class TilemapBehaviour : MonoBehaviour
         secondTileTrigger = true;
         //_player = GameObject.Find("Player_80"); // Use the Serializable field, otherwise we can't use the old player prefab anymore
         _initialPosition = new Vector2(_player.transform.position.x, _player.transform.position.y);
+        musicPlayer = GameObject.Find("Music Player").GetComponent<AudioSource>();
         fillHighlightTile();
     }
 
@@ -140,7 +142,7 @@ public class TilemapBehaviour : MonoBehaviour
                     _first = false;
                     return;
                 }
-                AudioSource.PlayClipAtPoint(_sound, Camera.main.transform.position);
+                musicPlayer.PlayOneShot(_sound);
                 if (firstTileTrigger && secondTileTrigger)
                 {
                     interactable.SetTile(secondClickPos, firstClickTile);
