@@ -130,6 +130,7 @@ MonoBehaviour:
   thrust: 5
   climbSpeed: 5
   jumpForce: 15
+  waitExit: 0.09
   direction: 1
   interactables: {fileID: 0}
   foregroundTriggers: {fileID: 0}
