@@ -3230,6 +3230,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Exit
       objectReference: {fileID: 0}
+    - target: {fileID: 4862392556271987150, guid: 700bdac7720467a49959a95aa8234086,
+        type: 3}
+      propertyPath: LevelLoadDelay
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4862392557086823924, guid: 700bdac7720467a49959a95aa8234086,
         type: 3}
       propertyPath: m_Offset.y
