@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] float thrust = 5f;
     [SerializeField] float climbSpeed = 5f;
     [SerializeField] float jumpForce = 100f;
+    [SerializeField] float waitExit = 0.05f;
     [SerializeField] public float direction = 1f;
     [SerializeField] Tilemap interactables, foregroundTriggers;
     [SerializeField] AudioClip deathClip;
@@ -21,6 +22,8 @@ public class Player : MonoBehaviour
     SpriteRenderer mySpriteRenderer;
     GameObject TileManager;
     GameObject TimeManager;
+    private bool _fade = false;
+    private float _fadeValue = 1f;
 
     float startingGravityScale;
 
@@ -45,6 +48,24 @@ public class Player : MonoBehaviour
     {
         Run();
         FlipSprite();
+        Fade();  
+    }
+
+    private void Fade()
+    {
+        if (_fade)
+        {
+            mySpriteRenderer.color = new Color(1, 1, 1, _fadeValue -= 0.01f);
+
+        }
+    }
+
+    private IEnumerator fadeOutCoroutine()
+    {
+        yield return new WaitForSeconds(waitExit);
+         thrust = 0f;
+        _fade = true;
+        
     }
 
     private void Run()
@@ -147,5 +168,10 @@ public class Player : MonoBehaviour
             return foregroundTriggers.GetTile<Tile>(foregroundTriggers.WorldToCell(closestPoint)).name;
         else
             return null;
+    }
+
+    public void fadeOut()
+    {
+        StartCoroutine(fadeOutCoroutine());
     }
 }

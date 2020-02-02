@@ -10,6 +10,7 @@ public class Exit : MonoBehaviour
     [SerializeField] float LevelExitSlowMoFactor = 0.2f;
     [SerializeField] float backgroundScrollSpeed = 0.5f;
     [SerializeField] AudioClip exitClip;
+    private GameObject _player;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -19,8 +20,9 @@ public class Exit : MonoBehaviour
 
     IEnumerator LoadNextLevel()
     {
+        _player.GetComponent<Player>().fadeOut();
         AudioSource.PlayClipAtPoint(exitClip, Camera.main.transform.position);
-        Time.timeScale = LevelExitSlowMoFactor;
+        //Time.timeScale = LevelExitSlowMoFactor;
         yield return new WaitForSecondsRealtime(LevelLoadDelay);
         Time.timeScale = 1f;
 
@@ -37,6 +39,7 @@ public class Exit : MonoBehaviour
     {
         myMaterial = GetComponent<Renderer>().material;
         offSet = new Vector2(0f, backgroundScrollSpeed);
+        _player = GameObject.Find("Player_80");
     }
 
     // Update is called once per frame

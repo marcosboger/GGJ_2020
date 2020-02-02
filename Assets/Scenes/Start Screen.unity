@@ -3256,6 +3256,11 @@ PrefabInstance:
       propertyPath: foregroundTriggers
       value: 
       objectReference: {fileID: 1757672320}
+    - target: {fileID: 5953064102921597839, guid: 63efc2f4fcecc0545ab29c75f35cf829,
+        type: 3}
+      propertyPath: waitExit
+      value: 0.09
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63efc2f4fcecc0545ab29c75f35cf829, type: 3}
 --- !u!1 &1785191276 stripped
