@@ -10,16 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fbbd9c23eacda134b87038347fd8081a, type: 3}
-  m_Name: Level 1 Dialogue
+  m_Name: LV2
   m_EditorClassIdentifier: 
-  DialogueText: 'Alex looked around Him, confused by this new surroundings, end by
-    the fact He''s made of pixel now!
-
-    "this is my game...this is crazy, i have to get out of here!"
-
-    He look around and recognize all the missplaced tiles around him, and the end
-    of the level.
-
-    "Maybe if I fix the tiles position i can exit!"
-
-'
+  DialogueText: 
