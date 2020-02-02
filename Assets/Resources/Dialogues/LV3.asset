@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbbd9c23eacda134b87038347fd8081a, type: 3}
   m_Name: LV3
   m_EditorClassIdentifier: 
-  DialogueText: 'The monster seems very annoyed when Alex reach the third level of
-    the game.
+  DialogueText: 'The monster seems very annoyed when Alex reaches the third level
+    of the game.
 
     "That was just luck"
 
-    Alex point at him.
+    Alex points at him.
 
     "Tell what you want, now I DEMAND to know who are you!""
 

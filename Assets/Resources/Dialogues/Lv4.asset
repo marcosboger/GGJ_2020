@@ -12,20 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbbd9c23eacda134b87038347fd8081a, type: 3}
   m_Name: Lv4
   m_EditorClassIdentifier: 
-  DialogueText: 'Viruz is very surprised when Alex solve the level and reach the end,
-    coming in to the fourth one.
+  DialogueText: 'Viruz is very surprised when Alex solves the level and reaches the
+    end, coming in to the fourth one.
 
-    "Damn you, why you did that?
+    "Damn you, why did you do that?
 
     That poor random code did nothing wrong..."
 
-    Alex look at him smugly
+    Alex looks at him smugly
 
     "There is no code or bug I can''t fix Viruz!
 
-    It''s bettere for You to remember this"
+    It''s better for You to remember this"
 
-    The virus laugh
+    The virus laughes
 
     "Really? The programmers in the Physic department where sayng the same, and they
     are still wrestling my marvelous codes...let''s see if you can solve THIS level
