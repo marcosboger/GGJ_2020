@@ -6976,15 +6976,6 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: 0, y: 5, z: 0}
-    second:
-      m_TileIndex: 3
-      m_TileSpriteIndex: 4
-      m_TileMatrixIndex: 2
-      m_TileColorIndex: 1
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
   - first: {x: 4, y: 5, z: 0}
     second:
       m_TileIndex: 4
@@ -7002,7 +6993,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: aa7f326e0aaf2ae4fa4505351b95889f, type: 2}
-  - m_RefCount: 3
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 738b35b329f5b004fbc8aab08c2e5b1b, type: 2}
   - m_RefCount: 18
     m_Data: {fileID: 11400000, guid: 33d7850dcdc1e554b81accdde9cbb669, type: 2}
@@ -7015,7 +7006,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 3
     m_Data: {fileID: 21300000, guid: 910309698546e1b4e95cca3b2447cb34, type: 3}
-  - m_RefCount: 3
+  - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: 525f705e326204742a690d6b8e7be771, type: 3}
   - m_RefCount: 18
     m_Data: {fileID: 21300000, guid: 97f856a062cb19e4a893a37e44062b96, type: 3}
@@ -7056,7 +7047,7 @@ Tilemap:
       e31: 4.5914e-41
       e32: 3.949078e-39
       e33: 5.98e-43
-  - m_RefCount: 24
+  - m_RefCount: 23
     m_Data:
       e00: 1
       e01: 0
@@ -7077,7 +7068,7 @@ Tilemap:
   m_TileColorArray:
   - m_RefCount: 0
     m_Data: {r: 2.26893e-40, g: 2.26893e-40, b: 2.26893e-40, a: 2.26893e-40}
-  - m_RefCount: 6
+  - m_RefCount: 5
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 18
     m_Data: {r: 0.49474904, g: 0.9622642, b: 0.5050168, a: 0.4117647}
@@ -7132,14 +7123,6 @@ CompositeCollider2D:
         Y: 52096772
       - X: -12204301
         Y: 52096772
-    - - X: 8895028
-        Y: 56325964
-      - X: 2265193
-        Y: 56270720
-      - X: 2209944
-        Y: 53674036
-      - X: 8895028
-        Y: 53618784
     - - X: -82204304
         Y: 7741935
       - X: -87956992
@@ -7178,10 +7161,6 @@ CompositeCollider2D:
       - {x: -1.2204595, y: 5.774194}
       - {x: -1.7956988, y: 5.7741647}
       - {x: -1.7956697, y: 5.209677}
-    - - {x: 0.8894732, y: 5.3618784}
-      - {x: 0.8894732, y: 5.632596}
-      - {x: 0.2265186, y: 5.6270437}
-      - {x: 0.2210242, y: 5.367403}
     - - {x: -8.22046, y: 0.2096774}
       - {x: -8.22046, y: 0.7741935}
       - {x: -8.795699, y: 0.7741642}
