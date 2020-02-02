@@ -3780,32 +3780,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6619730809668279151, guid: f136e0aa0ff129f479fa2196b57d05a6,
-        type: 3}
-      propertyPath: levelDialogue
-      value: 
-      objectReference: {fileID: 11400000, guid: 8bfde19f7dda3b24295dc2fd96038e96,
-        type: 2}
-    - target: {fileID: 7974266133882526731, guid: f136e0aa0ff129f479fa2196b57d05a6,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 7974266134840013216}
     - target: {fileID: 7974266133882526731, guid: f136e0aa0ff129f479fa2196b57d05a6,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 868464010}
-    - target: {fileID: 7974266133882526731, guid: f136e0aa0ff129f479fa2196b57d05a6,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StopTime
-      objectReference: {fileID: 0}
-    - target: {fileID: 7974266133882526731, guid: f136e0aa0ff129f479fa2196b57d05a6,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: activateChanges
-      objectReference: {fileID: 0}
     - target: {fileID: 7974266134129831862, guid: f136e0aa0ff129f479fa2196b57d05a6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3918,65 +3897,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7974266134475177186, guid: f136e0aa0ff129f479fa2196b57d05a6,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 7974266134840013216}
-    - target: {fileID: 7974266134475177186, guid: f136e0aa0ff129f479fa2196b57d05a6,
-        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 868464010}
-    - target: {fileID: 7974266134475177186, guid: f136e0aa0ff129f479fa2196b57d05a6,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartTime
-      objectReference: {fileID: 0}
-    - target: {fileID: 7974266134475177186, guid: f136e0aa0ff129f479fa2196b57d05a6,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: deactivateChanges
-      objectReference: {fileID: 0}
-    - target: {fileID: 7974266135398617560, guid: f136e0aa0ff129f479fa2196b57d05a6,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7974266135398617560, guid: f136e0aa0ff129f479fa2196b57d05a6,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1713805330}
-    - target: {fileID: 7974266135398617560, guid: f136e0aa0ff129f479fa2196b57d05a6,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1713805330}
-    - target: {fileID: 7974266135398617560, guid: f136e0aa0ff129f479fa2196b57d05a6,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 1713805330}
-    - target: {fileID: 7974266135398617560, guid: f136e0aa0ff129f479fa2196b57d05a6,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ResetLevel
-      objectReference: {fileID: 0}
-    - target: {fileID: 7974266135398617560, guid: f136e0aa0ff129f479fa2196b57d05a6,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ResetLevel
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f136e0aa0ff129f479fa2196b57d05a6, type: 3}
---- !u!114 &7974266134840013216 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2804511625151914432, guid: f136e0aa0ff129f479fa2196b57d05a6,
-    type: 3}
-  m_PrefabInstance: {fileID: 7974266134840013215}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acf89d91d62c61747807c83f29ecdb31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

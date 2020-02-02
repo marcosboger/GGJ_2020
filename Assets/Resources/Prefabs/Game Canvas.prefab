@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiText: {fileID: 932741080101887231}
-  levelDialogue: {fileID: 11400000, guid: 95fb262b052dd0049a574a878ce6fd12, type: 2}
+  levelDialogue: {fileID: 11400000, guid: 8bfde19f7dda3b24295dc2fd96038e96, type: 2}
 --- !u!1 &7974266133882526733
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,8 +206,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -38.99997, y: 501}
-  m_SizeDelta: {x: 54, y: 32}
+  m_AnchoredPosition: {x: -37.00003, y: 495.00003}
+  m_SizeDelta: {x: 70, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7974266133882526729
 CanvasRenderer:
@@ -266,9 +266,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.972549, g: 0.08627451, b: 0.08627451, a: 1}
-    m_HighlightedColor: {r: 0.6431373, g: 0.03137255, b: 0.03137255, a: 1}
-    m_PressedColor: {r: 0.43529412, g: 0, b: 0, a: 1}
-    m_SelectedColor: {r: 1, g: 0.5019608, b: 0.023529412, a: 1}
+    m_HighlightedColor: {r: 0.6226415, g: 0, b: 0, a: 1}
+    m_PressedColor: {r: 0.5566038, g: 0.013127446, b: 0.013127446, a: 1}
+    m_SelectedColor: {r: 0.972549, g: 0.08627451, b: 0.08627451, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -460,8 +460,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -93, y: -39}
-  m_SizeDelta: {x: 54, y: 32}
+  m_AnchoredPosition: {x: -107, y: -45}
+  m_SizeDelta: {x: 70, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7974266134475177184
 CanvasRenderer:
@@ -519,10 +519,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.9716981, g: 0.087086126, b: 0.087086126, a: 1}
-    m_HighlightedColor: {r: 0.6415094, g: 0.033285867, b: 0.033285867, a: 1}
-    m_PressedColor: {r: 0.4339623, g: 0, b: 0, a: 1}
-    m_SelectedColor: {r: 1, g: 0.5030896, b: 0.023584902, a: 1}
+    m_NormalColor: {r: 0.21226418, g: 1, b: 0.27077666, a: 1}
+    m_HighlightedColor: {r: 0, g: 0.7735849, b: 0.05773026, a: 1}
+    m_PressedColor: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
+    m_SelectedColor: {r: 0.21176471, g: 1, b: 0.27058825, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -599,8 +599,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15, y: 501}
-  m_SizeDelta: {x: 54, y: 32}
+  m_AnchoredPosition: {x: 32.99994, y: 495.00003}
+  m_SizeDelta: {x: 70, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7974266135398617558
 CanvasRenderer:
@@ -658,10 +658,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.972549, g: 0.08627451, b: 0.08627451, a: 1}
-    m_HighlightedColor: {r: 0.6431373, g: 0.03137255, b: 0.03137255, a: 1}
-    m_PressedColor: {r: 0.43529412, g: 0, b: 0, a: 1}
-    m_SelectedColor: {r: 1, g: 0.5019608, b: 0.023529412, a: 1}
+    m_NormalColor: {r: 0.98580134, g: 1, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.7522208, g: 0.764151, b: 0.0036044943, a: 1}
+    m_PressedColor: {r: 0.65930444, g: 0.6698113, b: 0, a: 1}
+    m_SelectedColor: {r: 0.9843137, g: 1, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
