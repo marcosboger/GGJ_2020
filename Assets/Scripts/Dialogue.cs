@@ -9,6 +9,7 @@ public class Dialogue : ScriptableObject
 
     [TextArea(14, 10)] [SerializeField] string DialogueText;
 
+
     public string GetDialogue()
     {
         return DialogueText;
