@@ -3016,7 +3016,7 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: 5ff7e08081e48854bbf581647c522678, type: 3}
+    m_Data: {fileID: 21300000, guid: a6efc52803c75f84b90795f9c4e5d631, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: -5641132315740603062, guid: e02d8e8599946f94dab115f9049c79c8,
       type: 3}
@@ -3328,15 +3328,15 @@ CompositeCollider2D:
       - X: 19918378
         Y: -9918437
       - X: 19918378
-        Y: -9999900
-      - X: 19893028
-        Y: -9999900
-      - X: 19892991
-        Y: -9999915
+        Y: -9973018
+      - X: 19838690
+        Y: -9973018
+      - X: 19838654
+        Y: -9973033
       - X: 9999915
-        Y: -19892991
+        Y: -19758007
       - X: 9999900
-        Y: -19893028
+        Y: -19758044
       - X: 9999900
         Y: -19918378
       - X: 9918437
@@ -3432,9 +3432,9 @@ CompositeCollider2D:
       - {x: 5.991838, y: 1.008127}
       - {x: 5.991809, y: -0.9918378}
       - {x: 1.9918379, y: -0.991873}
-      - {x: 1.9918087, y: -0.99999}
-      - {x: 1.9892917, y: -0.9999991}
-      - {x: 0.99999, y: -1.9893136}
+      - {x: 1.9918084, y: -0.9973018}
+      - {x: 1.983858, y: -0.99731094}
+      - {x: 0.99999, y: -1.9758152}
       - {x: 0.9999606, y: -1.9918379}
       - {x: -2.9918377, y: -1.9918084}
       - {x: -2.991873, y: -0.9918378}
@@ -5059,23 +5059,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 937554284, guid: 4b82664456f3694469a1b5fc28a8062b, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 937554285, guid: 4b82664456f3694469a1b5fc28a8062b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2
-      objectReference: {fileID: 0}
     - target: {fileID: 4588939706362326983, guid: 4b82664456f3694469a1b5fc28a8062b,
         type: 3}
       propertyPath: m_Name
       value: Background sprite
-      objectReference: {fileID: 0}
-    - target: {fileID: 4588939706362326983, guid: 4b82664456f3694469a1b5fc28a8062b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4588939706362327001, guid: 4b82664456f3694469a1b5fc28a8062b,
         type: 3}
