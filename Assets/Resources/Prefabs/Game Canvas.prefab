@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1770229187131540153}
   - component: {fileID: 312357428429600517}
   - component: {fileID: 932741080101887231}
+  - component: {fileID: 6619730809668279151}
   m_Layer: 5
   m_Name: Dialogue Text
   m_TagString: Untagged
@@ -63,12 +64,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-    culpa qui officia deserunt mollit anim id est laborum.
+  m_text: '[10:13:13]'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ecc24d9048c06be40b30ae3086fd6a65, type: 2}
   m_sharedMaterial: {fileID: 1138345730264623174, guid: ecc24d9048c06be40b30ae3086fd6a65,
@@ -97,8 +93,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -138,12 +134,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 932741080101887231}
-    characterCount: 445
+    characterCount: 10
     spriteCount: 0
-    spaceCount: 68
-    wordCount: 69
+    spaceCount: 0
+    wordCount: 3
     linkCount: 0
-    lineCount: 22
+    lineCount: 1
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -161,6 +157,20 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6619730809668279151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4794392956962354607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 689db8d162d64be4ab78cd717910b975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiText: {fileID: 932741080101887231}
+  levelDialogue: {fileID: 11400000, guid: 95fb262b052dd0049a574a878ce6fd12, type: 2}
 --- !u!1 &7974266133882526733
 GameObject:
   m_ObjectHideFlags: 0

@@ -5266,31 +5266,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 932741080101887231, guid: f136e0aa0ff129f479fa2196b57d05a6,
-        type: 3}
-      propertyPath: m_text
-      value: '[10:13:13]'
-      objectReference: {fileID: 0}
-    - target: {fileID: 932741080101887231, guid: f136e0aa0ff129f479fa2196b57d05a6,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 932741080101887231, guid: f136e0aa0ff129f479fa2196b57d05a6,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 932741080101887231, guid: f136e0aa0ff129f479fa2196b57d05a6,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 932741080101887231, guid: f136e0aa0ff129f479fa2196b57d05a6,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7974266133882526731, guid: f136e0aa0ff129f479fa2196b57d05a6,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target

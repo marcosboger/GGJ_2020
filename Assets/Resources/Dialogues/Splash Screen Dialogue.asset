@@ -10,16 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fbbd9c23eacda134b87038347fd8081a, type: 3}
-  m_Name: Level 1 Dialogue
+  m_Name: Splash Screen Dialogue
   m_EditorClassIdentifier: 
-  DialogueText: 'Alex looks around Him, confused by this new surroundings, and by
-    the fact He''s made of pixels now!
+  DialogueText: 'Welcome to GGJ 2020!
 
-    "This is my game...this is crazy, I have to get out of here!"
 
-    He looks around and recognizes all the missplaced tiles around him, and the end
-    of the level.
-
-    "Maybe if I fix the tiles position I can exit!"
-
-'
+    Press Play to begin!'

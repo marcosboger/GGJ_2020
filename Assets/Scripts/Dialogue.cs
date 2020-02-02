@@ -7,7 +7,7 @@ using UnityEngine;
 public class Dialogue : ScriptableObject
 {
 
-    [TextArea(14, 10)] [SerializeField] string DialogueText;
+    [TextArea(16, 20)] [SerializeField] string DialogueText;
 
 
     public string GetDialogue()

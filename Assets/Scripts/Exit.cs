@@ -28,6 +28,7 @@ public class Exit : MonoBehaviour
 
         var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 1);
+        FindObjectOfType<DialoguesController>().LoadText();
     }
 
 

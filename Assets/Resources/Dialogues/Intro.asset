@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbbd9c23eacda134b87038347fd8081a, type: 3}
   m_Name: Intro
   m_EditorClassIdentifier: 
-  DialogueText: "Anno 2XXX\r\nGlobal Game Jam, Politecnico di Milano\r\nAlex Pogrammo
+  DialogueText: "Year 2XXX\r\nGlobal Game Jam, Politecnico di Milano\r\nAlex Pogrammo
     has been awake for the last 36 hours, and with little time left before the end
-    of the Jam\r\nHe has been fighting with a bug/glitch filled game for the last
-    18 hours, and He\u2019s going crazy.\r\nHis colleagues are sleeping, exausted
-    by the inhuman challenge, but Alex keeps going, ignoring tiredness,\r\nthat strikes
-    at the least expected moment when, returning from a little bathroom pause, he
-    tramples in one of\r\nthe cables on the floor, making him fall headfirst in the
-    computer screen.\r.."
+    of the Jam\r he has been fighting with a bug/glitch filled game for the last 18
+    hours, and He\u2019s going crazy.\r\nHis colleagues are sleeping, exausted by
+    the inhuman challenge, but Alex keeps going, ignoring tiredness... Which strikes
+    at the least expected moment when, returning from a little toilet break, he tramples
+    in one of\r the cables on the floor, falling headfirst in the computer screen.\r.."
