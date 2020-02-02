@@ -5,8 +5,9 @@ using UnityEngine.Tilemaps;
 
 public class TilemapBehaviour : MonoBehaviour
 {
-    public Tilemap interactable, interactableNonTrigger;
+    public Tilemap interactable, interactableNonTrigger, highlightTilemap;
     private Tile firstClickTile, secondClickTile;
+    public Tile highlight;
     private bool firstTileTrigger, secondTileTrigger;
     private Vector3Int firstClickPos, secondClickPos;
     private bool _first = false;
@@ -108,9 +109,11 @@ public class TilemapBehaviour : MonoBehaviour
                     interactableNonTrigger.SetTileFlags(firstClickPos, TileFlags.None);
                     //interactableNonTrigger.SetColor(firstClickPos, Color.green);
                 }
+                highlightTilemap.SetTile(firstClickPos, highlight);
             }
             else if(_stop)
             {
+                highlightTilemap.SetTile(firstClickPos, null);
                 _first = false;
                 secondClickPos = interactable.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition));
                 secondClickTile = interactable.GetTile<Tile>(secondClickPos);
