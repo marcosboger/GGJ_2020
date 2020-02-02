@@ -45,4 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: {fileID: 0}
   interactableNonTrigger: {fileID: 0}
+  highlightTilemap: {fileID: 0}
+  highlightGreen: {fileID: 0}
+  highlightBlue: {fileID: 0}
   _player: {fileID: 0}
+  _sound: {fileID: 8300000, guid: 500e9ee3d68a1754ba74cc645b085c78, type: 3}
