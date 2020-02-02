@@ -59,6 +59,12 @@ public class TilemapBehaviour : MonoBehaviour
 
     public void deactivateChanges()
     {
+        if (!_stop)
+        {
+            activateChanges();
+            Time.timeScale = 0f;
+            return;
+        }
         _stop = false;
         interactable.GetComponent<TilemapCollider2D>().enabled = false;
         interactable.GetComponent<TilemapCollider2D>().enabled = true;
